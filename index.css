@@ -1,0 +1,27 @@
+.layui-layout-admin .layui-body {
+    bottom: 0;
+    overflow-y: hidden;
+}
+
+.layui-layout-admin .layui-logo {
+    width: 300px;
+}
+
+.layui-nav-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+body .layui-header dd>a{
+    cursor: pointer;
+}
+
+/*密码弹窗*/
+#userpwd {
+    padding-top: 20px;
+}
+#userpwd span{
+	color: red;
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>待审核</title>
+  <link rel="stylesheet" href="../css/layui.css">
+  <link rel="stylesheet" href="../css/waitverify.css">
+</head>
+<body>
+  <div id="table" class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div id="table" class="layui-card">
+          <div class="layui-card-header">待审核</div>
+          <div class="layui-card-body">
+            <table id="datatab" lay-filter="datatab"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="detail" class="layui-fluid layui-hide">
+    <div class="layui-row">
+      <div class="layui-col-xs12">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            <div class="layui-row">
+              <div class="layui-col-xs5">
+                <a id="back" href="javascript:;">
+                  <i class="layui-icon layui-icon-return"></i>
+                  <span>返回</span>
+                </a>
+              </div>
+              <div class="layui-col-xs7">
+                  详情
+              </div>
+            </div>
+          </div>
+          <div class="layui-card-body">
+            <form class="layui-form" action="">
+              <div class="layui-form-item">
+                <div class="layui-form-label">需求类型:</div>
+                <div id="state" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">风电场名称:</div>
+                <div id="windFarmName" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">描述:</div>
+                <div id="desc" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">用户:</div>
+                <div id="user" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">时间:</div>
+                <div id="rectime" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">主机厂家:</div>
+                <div id="hostName" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">所属行业:</div>
+                <div id="industry" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">语音:</div>
+                <div class="layui-form-mid layui-word-aux">
+                  <ol id="voices">
+                    <!-- <li><a href="#">语音1</a></li>
+                    <li><a href="#">语音2</a></li> -->
+                  </ol>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">附件:</div>
+                <div class="layui-form-mid layui-word-aux">
+                  <ol id="files">
+                    <!-- <li><a href="#">附件1</a></li>
+                    <li><a href="#">附件2</a></li> -->
+                  </ol>
+                  <ul id="images">
+                    <!-- <li><img src="" alt=""></li>
+                    <li></li> -->
+                  </ul>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">评价:</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="evaluate" value="0" title="一般" checked>
+                  <input type="radio" name="evaluate" value="1" title="重要">
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">金币数:</label>
+                <div class="layui-input-block">
+                  <input type="radio" name="money" value="0" title="0" checked>
+                  <i></i>
+                  <input type="radio" name="money" value="1" title="1">
+                  <input type="radio" name="money" value="2" title="2">
+                </div>
+              </div>
+              <div class="layui-form-item layui-form-text noborder">
+                <label class="layui-form-label">回复:</label>
+                <div class="layui-input-block">
+                  <textarea name="reply" placeholder="请回复" required class="layui-textarea">您提交的问题我们已收到，感谢您对我们产品的支持</textarea>
+                </div>
+              </div>
+              <div class="layui-form-item noborder">
+                <div class="layui-input-block">
+                  <button type="button" class="layui-btn" lay-submit lay-filter="detailForm">立即提交</button>
+                  <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/jQuery/jquery-3.1.1.js"></script>
+  <script src="../lib/echart/echarts.min.js"></script>
+  <script src="../layui.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/waitverify.js"></script>
+</body>
+</html>

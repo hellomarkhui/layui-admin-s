@@ -1,0 +1,10 @@
+.layui-layout-admin .layui-logo {
+    width: 300px;
+}
+
+.layui-nav-img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+}

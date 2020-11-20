@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>量云推广小程序后台管理系统-登录</title>
+    <link rel="stylesheet" href="../css/layui.css">
+    <script type="text/javascript">
+        document.write('<link rel="stylesheet" href="../css/login.css?v='+(new Date().getTime())+'">');
+    </script>
+</head>
+<body>
+	<div class="main">
+        <div class="logo"></div>
+        <h1 class="title">量云能源小程序后台管理系统</h1>
+        <div class="layui-form">
+            <div class="layui-form-item">
+                <input type="text" name="username" id="username" class="layui-input">
+                <input type="password" name="password" id="password" class="layui-input">
+            </div>
+            <div class="layui-form-item">
+                <input type="checkbox" id="password_remember" name="password_remember"  class="layui-input">
+                <span class="ps-txt">记住密码</span>
+                <button type="button" id="forget-password" class="ps-btn">忘记密码？</button>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn" id="login_bottom" lay-submit lay-filter="formLogin">登录</button>
+            </div>
+        </div>
+    </div>
+    <script src="../lib/jQuery/jquery-3.1.1.js"></script>
+    <script src="../layui.all.js"></script>
+    <script src="../lib/md5/md5.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

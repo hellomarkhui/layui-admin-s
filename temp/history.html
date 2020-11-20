@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>历史清单</title>
+  <link rel="stylesheet" href="../css/layui.css">
+  <link rel="stylesheet" href="../css/history.css">
+  <script src="../layui.js"></script>
+</head>
+<body>
+  <div id="table" class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div id="table" class="layui-card">
+          <div class="layui-card-header">历史清单</div>
+          <div class="layui-card-body">
+            <form class="layui-form" action="">
+              <div class="layui-form-item">
+                <div class="layui-inline">
+                  <label class="layui-form-label">开始时间：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" class="layui-input" readOnly id="startTime" name="startTime">
+                  </div>
+                  <label class="layui-form-label">结束时间：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" class="layui-input" readOnly id="endTime" name="endTime">
+                  </div>
+                  <label class="layui-form-label">描述：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="desc_q" name="desc_q" placeholder="请输入" class="layui-input">
+                  </div>
+                  <label class="layui-form-label">风电场名称：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="windFarmName_q" name="windFarmName_q" placeholder="请输入" class="layui-input">
+                  </div>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-inline">
+                  <label class="layui-form-label">用户：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="user_q" name="user_q" placeholder="请输入" class="layui-input">
+                  </div>
+                  <label class="layui-form-label">筛选：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="radio" name="evaluate_q" value="0" title="一般">
+                    <input type="radio" name="evaluate_q" value="1" title="重要">
+                  </div>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <button class="layui-btn" id="query-btn" lay-submit lay-filter="query">查询</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <table id="datatab" lay-filter="datatab"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="detail" class="layui-fluid layui-hide">
+    <div class="layui-row">
+      <div class="layui-col-xs12">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            <div class="layui-row">
+              <div class="layui-col-xs5">
+                <a id="back" href="javascript:;">
+                  <i class="layui-icon layui-icon-return"></i>
+                  <span>返回</span>
+                </a>
+              </div>
+              <div class="layui-col-xs7">
+                  详情
+              </div>
+            </div>
+          </div>
+          <div class="layui-card-body">
+            <form class="layui-form" action="">
+              <div class="layui-form-item">
+                <div class="layui-form-label">需求类型:</div>
+                <div id="state" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">风场名称:</div>
+                <div id="windFarmName" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">描述:</div>
+                <div id="desc" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">用户:</div>
+                <div id="user" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">时间:</div>
+                <div id="rectime" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">主机厂家:</div>
+                <div id="hostName" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">所属行业:</div>
+                <div id="industry" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">语音:</div>
+                <div class="layui-form-mid layui-word-aux">
+                  <ol id="voices">
+                    <!-- <li><a href="#">语音1</a></li>
+                    <li><a href="#">语音2</a></li> -->
+                  </ol>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-form-label">附件:</div>
+                <div class="layui-form-mid layui-word-aux">
+                  <ol id="files">
+                    <!-- <li><a href="#">附件1</a></li>
+                    <li><a href="#">附件2</a></li> -->
+                  </ol>
+                  <ul id="images">
+                    <!-- <li><img src="" alt=""></li>
+                    <li></li> -->
+                  </ul>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">评价时间:</label>
+                <div id="evaluate_t" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">评价:</label>
+                <div id="evaluate" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item">
+                <label class="layui-form-label">金币数:</label>
+                <div id="money" class="layui-form-mid layui-word-aux"></div>
+              </div>
+              <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">回复:</label>
+                <div id="reply" class="layui-form-mid layui-word-aux"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/jQuery/jquery-3.1.1.js"></script>
+  <script src="../lib/echart/echarts.min.js"></script>
+  <script src="../layui.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/history.js"></script>
+</body>
+</html>

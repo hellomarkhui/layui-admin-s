@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>量云推广小程序管理系统</title>
+  <link rel="stylesheet" href="css/layui.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="layui.js"></script>
+</head>
+<body>
+  <div class="layui-layout-admin">
+    <!--头部-->
+    <div class="layui-header">
+      <div class="layui-logo">量云能源小程序后台管理系统</div>
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="javascript:;"><img src="images/admin.png" class="layui-nav-img"><span id="username"></span></a>
+          <dl class="layui-nav-child">
+            <dd>
+              <a id="checkout">
+                <i class="layui-icon layui-icon-logout"></i>
+                <span>退出登录</span>
+              </a>
+              <a id="setpassword">
+                <i class="layui-icon layui-icon-set"></i>
+                <span>修改密码</span>
+              </a>
+            </dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+    
+    <!--左侧-->
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+        <ul class="layui-nav layui-nav-tree" lay-filter="nav-left">
+          <li class="layui-nav-item layui-nav-itemed">
+            <a href="javascript:;">问题需求</a>
+            <dl class="layui-nav-child">
+              <dd class="layui-this"><a href="javascript:;" data-url="temp/waitverify.html">待审核</a></dd>
+              <dd><a href="javascript:;" data-url="temp/history.html">历史清单</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;" data-url="temp/userreview.html">用户审核</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!--中间主体-->
+    <div class="layui-body" id="container">
+      <!-- <div class="layui-tab" lay-filter="tabs" lay-allowClose="true">
+        <ul class="layui-tab-title">
+          <li class="layui-this">首页</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show" id="requestdata">首页内容</div>
+        </div>
+      </div> -->
+      <iframe src="temp/waitverify.html" style="width:100%;height:100%;"></iframe>
+    </div>
+  </div>
+  <form class="layui-form"  id="userpwd" style="display:none;">
+    <div class="layui-form-item">
+      <label class="layui-form-label">原始密码<span>*</span></label>
+      <div class="layui-input-inline">
+        <input type="password" name="originPwd" required lay-verify="required" placeholder="原始密码" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">修改密码<span>*</span></label>
+      <div class="layui-input-inline">
+        <input type="password" name="userPwd" required lay-verify="required" placeholder="修改密码" autocomplete="off" class="layui-input" lay-reqtext="修改密码不能为空！">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">确认密码<span>*</span></label>
+      <div class="layui-input-inline">
+        <input type="password" name="userPwd2" required lay-verify="required" placeholder="确认密码" autocomplete="off" class="layui-input" lay-reqtext="确认密码不能为空？">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn" type="button" lay-submit lay-filter="submitUserPwd">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+  </form>
+<script src="lib/jQuery/jquery-3.1.1.js"></script>
+<script src="lib/echart/echarts.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

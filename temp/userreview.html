@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>用户审核</title>
+  <link rel="stylesheet" href="../css/layui.css">
+  <link rel="stylesheet" href="../css/userreview.css">
+  <script src="../layui.js"></script>
+</head>
+<body>
+  <div id="table" class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md12">
+        <div id="table" class="layui-card">
+          <div class="layui-card-header">用户信息</div>
+          <div class="layui-card-body">
+            <form class="layui-form" action="">
+              <div class="layui-form-item">
+                <div class="layui-inline">
+                  <label class="layui-form-label">姓名：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="name" name="name" placeholder="请输入" class="layui-input">
+                  </div>
+                  <label class="layui-form-label">电子邮箱：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="mail" name="mail" placeholder="请输入" class="layui-input">
+                  </div>
+                  <label class="layui-form-label">联系方式：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="tel" name="tel" placeholder="请输入" class="layui-input">
+                  </div>
+                </div>
+              </div>
+              <div class="layui-form-item">
+                <div class="layui-inline">
+                  <label class="layui-form-label">所属公司：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="company" name="company" placeholder="请输入" class="layui-input">
+                  </div>
+                  <label class="layui-form-label">职位：</label>
+                  <div class="layui-input-inline" style="width: 200px;">
+                    <input type="text" id="position" name="position" placeholder="请输入" class="layui-input">
+                  </div>
+                </div>
+                <div class="layui-form-item">
+                  <div class="layui-inline">
+                    <label class="layui-form-label">审核情况：</label>
+                    <div class="layui-input-inline" style="width: 600px;">
+                      <input type="radio" name="review" value="all" title="全部">
+                      <input type="radio" name="review" value="0" title="未提交审核">
+                      <input type="radio" name="review" value="1" title="待审核" checked>
+                      <input type="radio" name="review" value="2" title="已审核">
+                      <input type="radio" name="review" value="3" title="未通过审核">
+                    </div>
+                    <div class="layui-input-inline" style="width: 200px;">
+                      <button class="layui-btn" id="query-btn" type="button" lay-submit lay-filter="query">查询</button>
+                      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                  </div>
+              </div>
+            </form>
+            <table id="datatab" lay-filter="datatab"></table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../lib/jQuery/jquery-3.1.1.js"></script>
+  <script src="../lib/echart/echarts.min.js"></script>
+  <script src="../layui.js"></script>
+  <script src="../js/common.js"></script>
+  <script src="../js/userreview.js"></script>
+  <script type="text/html" id="barDemo">
+    <!-- 这里同样支持 laytpl 语法，如： -->
+    {{#  if(d.review == 1){ }}
+      <a class="layui-btn layui-btn-xs" lay-event="pass">通过</a>
+      <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="noPass">不通过</a>
+    {{#  } }}
+  </script>
+</body>
+</html>
